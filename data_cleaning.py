@@ -1,6 +1,6 @@
 from database_utils import DatabaseConnector
 import pandas as pd
-from sqlalchemy import create_engine,MetaData,Table
+from sqlalchemy import MetaData,Table
 import requests
 
 class DataCleaning :
