@@ -1,6 +1,6 @@
 # Multinational-Retail-Data-Centralisation
 
-<h1> Retail Data Centralization / Data Extraction 1</h1>
+<h1> Retail Data Centralization / Data Extraction </h1>
 
 # Table of Contents
 
