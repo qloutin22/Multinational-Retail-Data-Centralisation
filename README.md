@@ -29,8 +29,12 @@ Throughout the project, several key learnings were attained, including data inte
 Install PostgreSQL16
 Install pgAdmin 4 
 Set up a new database within pgadmin4 and name it Sales_data.
+
 ![Alt text](Images/image-1.png)
+
 Ensure pgAdmin 4 has the correct binary path PostgreSQL16 
+
+
 ![Alt text](Images/image-1.png)
 
 ## Installation
@@ -73,6 +77,7 @@ Data Centralization:
 
 Verify that extracted data is centralized into the designated pgAdmin4 PostgreSQL16 database .
 The database should have the following structure and have the following tables.
+
 ![Alt text](Images/image-2.png)
 
 ## Project Code Breakdown
@@ -141,32 +146,58 @@ This file contains upload credentials.
 
 I used SQL to clean some of my user data once in pgAdmin 4.
 SQL code used to transform data types in pgAdmin4
+
 ![Alt text](Images/image-3.png)
 ![Alt text](Images/image-4.png)
+
 SQL code used to records with 'date_uuid' values that do not match the UUID format
+
 ![Alt text](Images/image-5.png)
+
 SQL code used to update invalid 'date_uuid' values to NULL
+
 ![Alt text](Images/image-6.png)
+
 SQL code used to change Change the data type of 'date_payment_confirmed' to DATE
+
 ![Alt text](Images/image-7.png)
+
 SQL code used to Change data types of columns to the required types and Update 'NULL' strings in 'date_payment_confirmed' column to actual NULL values
+
 ![Alt text](Images/image-8.png)
+
 Code used to Change the data type of 'date_payment_confirmed' to DATE
+
 ![Alt text](Images/image-9.png)
+
 Code used to Alter tables and add primary keys
+
 ![Alt text](Images/image-10.png)
+
 Null values from dim_date_times had to be viewed and removed 
+
 ![Alt text](Images/image-11.png)
+
 The following code is uded to a unquie keys , key constraints and forgein keys.
+
 ![Alt text](Images/image-12.png)
+
 Onece everything is added your pgAdmin4 database dim tables should look like this :
+
 ![Alt text](Images/image-13.png)
+
 ![Alt text](Images/image-14.png)
+
 ![Alt text](Images/image-15.png)
+
 ![Alt text](Images/image-16.png)
+
 ![Alt text](Images/image-17.png)
+
 and the orders tables should contain these keys. This will be used to join the data for quieries.
+
 ![Alt text](Images/image-18.png)
+
 ## SQL Data Quieres in pgAdmin4
 
 I ran SQL quieries in VS code
