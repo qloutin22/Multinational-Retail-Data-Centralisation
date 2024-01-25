@@ -10,10 +10,9 @@
 4. [Project Code Breakdown](Project-Code-Breakdown)
 5. [Usage](#usage)
 6. [SQL Data cleaning in pgAdmin4](#SQL-Data-cleaning-in-pgAdmin4)
-7. [SQL Data Quieres in pgAdmin4](#SQL-Data-Quieres-in-pgAdmin4)
+7. [SQL Data Queries in pgAdmin4](#SQL-Data-Quieres-in-pgAdmin4)
 8. [File Structure](#file-structure)
 9. [License](#license)
-
 
 ## Description
 
@@ -21,19 +20,18 @@ The Retail Data Centralisation/Data Extraction project aims to centralise and st
 
 Developing an efficient data extraction mechanism from diverse retail systems.
 Centralising data to a unified database or data warehouse for easy access and analysis.
-Implementing tools for data cleansing, transformation, and quieris.
+Implementing tools for data cleansing, transformation, and queries.
 Enabling stakeholders to derive actionable insights for strategic decision-making.
 Throughout the project, several key learnings were attained, including data integration techniques, ETL (Extract, Transform, Load) processes, database management, data cleaning SQL and Python. Understanding retail-specific data challenges and developing scalable solutions were integral parts of the learning process.
 
 ## Setting up the data base 
 Install PostgreSQL16
-Install pgAdmin 4 
-Set up a new database within pgadmin4 and name it Sales_data.
+Install pgAdmin 4. 
+Set up a new database within pgadmin4 and name its Sales_data.
 
 ![Alt text](Images/image-1.png)
 
-Ensure pgAdmin 4 has the correct binary path PostgreSQL16 
-
+Ensure pgAdmin 4 has the correct binary path PostgreSQL16. 
 
 ![Alt text](Images/image-1.png)
 
@@ -53,7 +51,7 @@ pip install -r requirements.txt
 import tabula as ta
 import pandas as pd
 import yaml
-from yaml.loader import SafeLoader
+from yaml. loader import SafeLoader
 from sqlalchemy import create_engine,MetaData,Table
 from database_utils import DatabaseConnector as dc
 import requests
@@ -62,7 +60,6 @@ from io import StringIO
 import re
 import yaml
 import numpy as np
-
 
 ## Usage
 
@@ -83,19 +80,19 @@ The database should have the following structure and have the following tables.
 ## Project Code Breakdown
 
 <h4>gitignore</h4>
-Hides database crediental files.
+Hides database credentials files.
 <h4>data_cleaning.py</h4>
 This file contains the Data Cleaning class which cleans data. The data was also cleaned in SQL.
 <h5>def read_rds_table</h5>
 Reads tables and returns a table name.
 <h5>def clean_orders_data</h5>
-Cleans data from a table name that was identifed using the above method. The data is cleaned into different data types.
+Cleans data from a table name that was identified using the above method. The data is cleaned into different data types.
 <h5>upload_to_db_2</h5>
 This method contains a engine to upload tables to a pgAdmin4 database.
 <h5>def upload_to_json</h5>
-This method gets a json file from a url and returns the data.
+This method gets a Json file from a URL and returns the data.
 <h5>def upload_to_db_3</h5>
-This method takes the json file from the above method and uploads it to a table using an engine created in another method.
+This method takes the Json file from the above method and uploads it to a table using an engine created in another method.
 <h4>data_extraction.py</h4>
 This file contains various data extraction and data cleaning methods
 <h5>def retrieve_pdf_data</h5>
@@ -105,7 +102,7 @@ This method cleans the extracted PDF data from the method above.
 <h5>def upload_to_de</h5>
 This method contains a data base engine which uploads the PDF data to pgAdmin4
 <h5> def retrieve_store_data</h5>
-This method uses an API to extract data. It uses a x-api-key to access the data. This method contains a for loop which which genrates different links dependent on store number.
+This method uses an API to extract data. It uses a x-API-key to access the data. This method contains a for loop which generates different links dependent on store number.
 <h5> def called_clean_store_data</h5>
 This method cleans the data extracted from the method above. 
 <h5> def upload_to_db</h5>
@@ -141,7 +138,6 @@ This file contains database credentials.
 <h4>upload_creds.yaml</h4>
 This file contains upload credentials.
 
-
 ## SQL Data Cleaning in pgAdmin4
 
 I used SQL to clean some of my user data once in pgAdmin 4.
@@ -158,7 +154,7 @@ SQL code used to update invalid 'date_uuid' values to NULL
 
 ![Alt text](Images/image-6.png)
 
-SQL code used to change Change the data type of 'date_payment_confirmed' to DATE
+SQL code used to change the data type of 'date_payment_confirmed' to DATE
 
 ![Alt text](Images/image-7.png)
 
@@ -178,11 +174,11 @@ Null values from dim_date_times had to be viewed and removed
 
 ![Alt text](Images/image-11.png)
 
-The following code is uded to a unquie keys , key constraints and forgein keys.
+The following code is used to a unique keys , key constraints and foreign keys.
 
 ![Alt text](Images/image-12.png)
 
-Onece everything is added your pgAdmin4 database dim tables should look like this :
+Once everything is added your pgAdmin4 database dim tables should look like this :
 
 ![Alt text](Images/image-13.png)
 
@@ -194,13 +190,13 @@ Onece everything is added your pgAdmin4 database dim tables should look like thi
 
 ![Alt text](Images/image-17.png)
 
-and the orders tables should contain these keys. This will be used to join the data for quieries.
+and the orders tables should contain these keys. This will be used to join the data for queries.
 
 ![Alt text](Images/image-18.png)
 
-## SQL Data Quieres in pgAdmin4
+## SQL Data Queries in pgAdmin4
 
-I ran SQL quieries in VS code
+I ran SQL queries in VS code
 
 What Locations have the most stores?
 ![Alt text](Images/image-19.png)
@@ -212,7 +208,7 @@ Determine which type of store is generating the most sales in Germany
 ![Alt text](Images/image-22.png)
 
  Perform a query to determine the staff numbers in each of the countries the company sells in.
-I used this updates strings and add new colums 
+I used this updates strings and add new columns 
 ![Alt text](Images/image-23.png)
 I used this code to left join my table 
 ![Alt text](Images/image-24.png)
@@ -241,6 +237,6 @@ retail-data-centralization/
 |
 |──upload_creds.yaml
 
-
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
+
